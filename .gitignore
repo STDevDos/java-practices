@@ -1,0 +1,4 @@
+# Project exclude paths
+/design-patterns/target/
+/http/target/
+/predicates/target/
