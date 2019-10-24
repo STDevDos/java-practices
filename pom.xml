@@ -16,6 +16,8 @@
         <module>predicates</module>
         <module>http</module>
         <module>design-patterns</module>
+        <module>generics</module>
+        <module>ejercicios</module>
     </modules>
 
     <properties>
