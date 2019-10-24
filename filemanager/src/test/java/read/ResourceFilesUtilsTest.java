@@ -1,10 +1,12 @@
 package read;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ResourceFilesUtilsTest {
 
@@ -19,21 +21,28 @@ class ResourceFilesUtilsTest {
     void test_convertResourceToByteArray() {
         String result = resourceFilesUtils.convertResourceToByteArray();
         System.out.println(result);
-        Assertions.assertTrue(Objects.nonNull(result));
+        assertTrue(Objects.nonNull(result));
     }
 
     @Test
     void test_convertResourceToBase64() {
         String result = resourceFilesUtils.convertResourceFileToBase64();
         System.out.println(result);
-        Assertions.assertTrue(Objects.nonNull(result));
+        assertTrue(Objects.nonNull(result));
     }
 
     @Test
     void test_convertResourceInputStreamToBase64() {
         String result = resourceFilesUtils.convertResourceInputStreamToBase64();
         System.out.println(result);
-        Assertions.assertTrue(Objects.nonNull(result));
+
+        // assert
+        assertAll(
+                () -> assertTrue(Objects.nonNull(result)),
+                () -> assertTrue(Objects.nonNull(result)),
+                () -> assertTrue(Objects.nonNull(result))
+        );
+
     }
 
 }
