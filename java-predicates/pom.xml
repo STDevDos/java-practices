@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ejercicios</artifactId>
+    <artifactId>java-predicates</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,32 +19,6 @@
         <maven.compiler.source>11</maven.compiler.source>
         <junit-plataform.version>5.3.1</junit-plataform.version>
     </properties>
-
-    <dependencies>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- JUnit5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
-        </dependency>
-
-    </dependencies>
 
     <build>
         <plugins>

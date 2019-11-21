@@ -9,10 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>http</artifactId>
-
-    <name>java-http</name>
-    <description>Java Http</description>
+    <artifactId>java-ejercicios</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
