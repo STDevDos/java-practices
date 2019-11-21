@@ -1,11 +1,11 @@
 package designpatterns.structural;
 
-import com.dev.designpatterns.structural.decorator.*;
-import com.dev.designpatterns.structural.facade.Fachada;
-import com.dev.designpatterns.structural.facade.FachadaRequest;
-import com.dev.designpatterns.structural.proxy.CuentaBancaria;
-import com.dev.designpatterns.structural.proxy.CuentaService;
-import com.dev.designpatterns.structural.proxy.ProxyCuentaService;
+import designpatterns.structural.decorator.*;
+import designpatterns.structural.facade.Fachada;
+import designpatterns.structural.facade.FachadaRequest;
+import designpatterns.structural.proxy.CuentaBancaria;
+import designpatterns.structural.proxy.CuentaService;
+import designpatterns.structural.proxy.ProxyCuentaService;
 
 import java.io.IOException;
 import java.math.BigDecimal;

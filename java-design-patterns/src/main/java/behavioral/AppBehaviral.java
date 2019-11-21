@@ -1,12 +1,12 @@
 package behavioral;
 
-import com.dev.designpatterns.behavioral.command.*;
-import com.dev.designpatterns.behavioral.memento.Caretaker;
-import com.dev.designpatterns.behavioral.memento.Juego;
-import com.dev.designpatterns.behavioral.memento.Originator;
-import com.dev.designpatterns.behavioral.observer.GBPObservador;
-import com.dev.designpatterns.behavioral.observer.MXNObservador;
-import com.dev.designpatterns.behavioral.observer.Subject;
+import designpatterns.behavioral.command.*;
+import designpatterns.behavioral.memento.Caretaker;
+import designpatterns.behavioral.memento.Juego;
+import designpatterns.behavioral.memento.Originator;
+import designpatterns.behavioral.observer.GBPObservador;
+import designpatterns.behavioral.observer.MXNObservador;
+import designpatterns.behavioral.observer.Subject;
 
 import java.io.IOException;
 import java.math.BigDecimal;

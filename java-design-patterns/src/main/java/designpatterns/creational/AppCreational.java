@@ -1,12 +1,12 @@
 package designpatterns.creational;
 
-import com.dev.designpatterns.creational.abstractfactory.DBConfig;
-import com.dev.designpatterns.creational.abstractfactory.DBConnection;
-import com.dev.designpatterns.creational.abstractfactory.FactoryDBConnection;
-import com.dev.designpatterns.creational.abstractfactory.RequestConnection;
-import com.dev.designpatterns.creational.prototype.Employee;
-import com.dev.designpatterns.creational.prototype.EmployeeAddress;
-import com.dev.designpatterns.creational.singleton.DatabaseConfig;
+import designpatterns.creational.abstractfactory.DBConfig;
+import designpatterns.creational.abstractfactory.DBConnection;
+import designpatterns.creational.abstractfactory.FactoryDBConnection;
+import designpatterns.creational.abstractfactory.RequestConnection;
+import designpatterns.creational.prototype.Employee;
+import designpatterns.creational.prototype.EmployeeAddress;
+import designpatterns.creational.singleton.DatabaseConfig;
 
 import java.io.IOException;
 
