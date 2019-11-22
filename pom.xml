@@ -19,6 +19,7 @@
         <module>java-generics</module>
         <module>java-ejercicios</module>
         <module>java-filemanager</module>
+        <module>java-customvalidation</module>
     </modules>
 
     <properties>

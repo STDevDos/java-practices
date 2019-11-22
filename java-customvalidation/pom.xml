@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java-generics</artifactId>
+    <artifactId>java-customvalidation</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,19 +29,17 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- JUnit5 -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
         </dependency>
+
+        <!-- Java Bean Validations :: https://www.baeldung.com/javax-validation -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
         </dependency>
 
     </dependencies>
