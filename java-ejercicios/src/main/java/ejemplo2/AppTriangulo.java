@@ -2,10 +2,6 @@ package ejemplo2;
 
 import java.math.BigDecimal;
 
-
-/**
- * @author Froy
- */
 public class AppTriangulo {
 
     public static void main(String[] args) {

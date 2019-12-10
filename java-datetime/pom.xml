@@ -2,26 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java-practice</artifactId>
+        <groupId>com.froyo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.froyo</groupId>
-    <artifactId>java-practice</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-
-    <name>java-practice</name>
-    <description>Java Practice</description>
-
-    <modules>
-        <module>java-predicates</module>
-        <module>java-http</module>
-        <module>java-design-patterns</module>
-        <module>java-generics</module>
-        <module>java-ejercicios</module>
-        <module>java-filemanager</module>
-        <module>java-customvalidation</module>
-        <module>java-datetime</module>
-    </modules>
+    <artifactId>java-datetime</artifactId>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,7 +25,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
