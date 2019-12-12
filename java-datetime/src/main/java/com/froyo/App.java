@@ -1,11 +1,28 @@
 package com.froyo;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class App {
 
     public static void main(String[] args) {
+
+        System.out.println(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis());
+        System.out.println(Instant.now().toEpochMilli());
+
+        System.out.println(LocalDateTime.now().getNano());
+        System.out.println(LocalDateTime.now().getNano());
+
+        System.out.println(System.nanoTime());
+        System.out.println("Text ---------------------- 2 ");
+
+        System.out.println(LocalDateTime.now().getNano());
+
+        System.out.println("Text ---------------------- 3");
+        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("ss")));
+        System.out.println("Text ---------------------- ");
 
         //Capturar fechas de naciemientos, etc... para el registro del tiempo transcurrido.
 
@@ -30,6 +47,8 @@ public class App {
         LocalDateTime localDateTime2 = LocalDateTime.now();
         ZonedDateTime zdt = ZonedDateTime.of(localDateTime2, ZoneId.systemDefault());
         System.out.printf(" Milisegundos 2: %d", zdt.toInstant().toEpochMilli());
+
+
 
 
 
