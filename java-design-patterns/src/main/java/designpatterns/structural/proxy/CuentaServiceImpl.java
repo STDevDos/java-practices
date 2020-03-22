@@ -2,9 +2,6 @@ package designpatterns.structural.proxy;
 
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
 public class CuentaServiceImpl implements CuentaService {
 
     public void retirar(CuentaBancaria cuentaBancaria, BigDecimal monto) {

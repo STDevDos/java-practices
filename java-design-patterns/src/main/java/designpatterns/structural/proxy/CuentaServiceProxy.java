@@ -2,14 +2,11 @@ package designpatterns.structural.proxy;
 
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
-public class ProxyCuentaService implements CuentaService {
+public class CuentaServiceProxy implements CuentaService {
 
     private CuentaServiceImpl cuentaServiceImpl;
 
-    public ProxyCuentaService() {
+    public CuentaServiceProxy() {
         this.cuentaServiceImpl = new CuentaServiceImpl();
     }
 

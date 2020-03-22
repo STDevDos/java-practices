@@ -1,10 +1,12 @@
 package designpatterns.structural.proxy;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
+@AllArgsConstructor
+@Data
 public class CuentaBancaria {
 
     private Long idCuenta;
@@ -13,28 +15,6 @@ public class CuentaBancaria {
 
     private CuentaBancaria() {
         throw new IllegalArgumentException("NOT VALID");
-    }
-
-    public CuentaBancaria(Long idCuenta, String nombre, BigDecimal saldo) {
-        this.idCuenta = idCuenta;
-        this.nombre = nombre;
-        this.saldo = saldo;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
-    public Long getIdCuenta() {
-        return idCuenta;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
 }

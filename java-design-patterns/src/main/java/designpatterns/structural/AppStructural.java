@@ -5,14 +5,11 @@ import designpatterns.structural.facade.Fachada;
 import designpatterns.structural.facade.FachadaRequest;
 import designpatterns.structural.proxy.CuentaBancaria;
 import designpatterns.structural.proxy.CuentaService;
-import designpatterns.structural.proxy.ProxyCuentaService;
+import designpatterns.structural.proxy.CuentaServiceProxy;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
 public class AppStructural {
 
     public static void main(String[] args) throws IOException {
@@ -35,7 +32,7 @@ public class AppStructural {
 
         // Proxy pattern -------------------------------
         CuentaBancaria cuentaBancaria = new CuentaBancaria(25L, "Froy", BigDecimal.TEN);
-        CuentaService cuentaService = new ProxyCuentaService();
+        CuentaService cuentaService = new CuentaServiceProxy();
         cuentaService.mostrar(cuentaBancaria);
         cuentaService.depositar(cuentaBancaria, new BigDecimal("30"));
         cuentaService.mostrar(cuentaBancaria);
