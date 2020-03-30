@@ -11,36 +11,62 @@
 
     <artifactId>java-junit5</artifactId>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <junit-platform.version>1.3.2</junit-platform.version>
+        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
     <dependencies>
+
+        <!-- Utility dependencies -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- JUnit5 http://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
+            <version>${junit-jupiter.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
-        </dependency>
-        <!-- JUnit 3 or 4 via JUnitPlataform -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.junit.vintage</groupId>-->
-        <!--            <artifactId>junit-vintage-engine</artifactId>-->
-        <!--            <version>5.4.0</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit-jupiter.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
