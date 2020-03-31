@@ -31,7 +31,7 @@ public interface ProjectEulerService {
      * @param numero
      * @return
      */
-    public long getlargestPrimeFactor(long numero);
+    public long fetchLargestPrimeFactor(long numero);
 
     /**
      * Obtener true si el número pasado como parametro es primo.

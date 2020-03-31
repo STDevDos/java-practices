@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
-/**
- * @author Muguruza
- */
 public class ProjectEulerServiceImpl implements ProjectEulerService {
+
     @Override
     public long sumaDeMultiplos(int limiteDeSerie, List<Integer> multiplosDe) {
         int suma = 0;
@@ -42,7 +40,7 @@ public class ProjectEulerServiceImpl implements ProjectEulerService {
     }
 
     @Override
-    public long getlargestPrimeFactor(long numero) {
+    public long fetchLargestPrimeFactor(long numero) {
         for (long a = 2; a < numero; a++) {
             if ((numero % a) == 0) {
                 long largest = numero / a;
