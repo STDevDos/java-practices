@@ -30,19 +30,27 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Apache Utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+
         <!-- JUnit5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
+<!--            <scope>test</scope> &lt;!&ndash; test folder &ndash;&gt;-->
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
+<!--            <scope>test</scope> &lt;!&ndash; test folder &ndash;&gt;-->
         </dependency>
+
 
     </dependencies>
 
