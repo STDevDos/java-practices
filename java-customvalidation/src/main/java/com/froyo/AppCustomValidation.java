@@ -1,8 +1,10 @@
 package com.froyo;
 
 import com.froyo.model.Viaje;
+import lombok.extern.java.Log;
 
-public class App {
+@Log
+public class AppCustomValidation {
 
     public static void main(String[] args) {
 
@@ -10,9 +12,9 @@ public class App {
         Viaje viaje2 = new Viaje("inTerjet");
         Viaje viaje3 = new Viaje("taca");
 
-        System.out.println(viaje1);
-        System.out.println(viaje2);
-        System.out.println(viaje3);
+        log.info(viaje1.toString());
+        log.info(viaje2.toString());
+        log.info(viaje3.toString());
 
     }
 
