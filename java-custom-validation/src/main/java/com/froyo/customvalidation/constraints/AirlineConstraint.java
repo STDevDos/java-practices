@@ -1,25 +1,23 @@
 package com.froyo.customvalidation.constraints;
 
-import com.froyo.customvalidation.AerolineaValidator;
+import com.froyo.customvalidation.AirlineValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-import java.util.Arrays;
-import java.util.List;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({FIELD})
 @Retention(RUNTIME)
-@Constraint(validatedBy = AerolineaValidator.class)
+@Constraint(validatedBy = AirlineValidator.class)
 @Documented
-public @interface AerolineaConstraint {
+public @interface AirlineConstraint {
 
-    String message() default "AEROLINEA NO VALIDA.";
+    String message() default "Airline NO VALIDA.";
 
     Class<?>[] groups() default {};
 

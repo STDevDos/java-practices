@@ -13,13 +13,13 @@
     <description>Java Practice</description>
 
     <modules>
+        <module>java-custom-validation</module>
         <module>java-predicates</module>
         <module>java-http</module>
         <module>java-design-patterns</module>
         <module>java-generics</module>
         <module>java-ejercicios</module>
         <module>java-filemanager</module>
-        <module>java-customvalidation</module>
         <module>java-datetime</module>
         <module>java-junit5</module>
     </modules>
