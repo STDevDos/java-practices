@@ -20,7 +20,6 @@
         <module>java-generics</module>
         <module>java-ejercicios</module>
         <module>java-filemanager</module>
-        <module>java-datetime</module>
         <module>java-junit5</module>
     </modules>
 
