@@ -1,8 +1,7 @@
 package quick;
 
-import ejemplo1.Estudiante;
-import ejemplo1.IEstudiante;
 import lombok.extern.java.Log;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
@@ -14,17 +13,27 @@ public class AppQuick {
 
     public static void main(String[] args) {
 
+
+    }
+
+    public void quick2() {
+
+        log.info(RandomStringUtils.randomAlphanumeric(4));
+
+    }
+
+    public void quick1() {
+
         String inputMask = "MM/dd/yyyy";
         String stringData = "05/25/2020 12:13";
 
-        try{
-            stringData = StringUtils.substring(stringData,0,inputMask.length());
-            Date date = DateUtils.parseDateStrictly(stringData,inputMask);
+        try {
+            stringData = StringUtils.substring(stringData, 0, inputMask.length());
+            Date date = DateUtils.parseDateStrictly(stringData, inputMask);
             log.info(date.toString());
-        }catch(ParseException pe){
+        } catch (ParseException pe) {
             pe.printStackTrace();
         }
-
 
     }
 
