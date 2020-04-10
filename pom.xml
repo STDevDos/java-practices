@@ -14,33 +14,94 @@
 
     <modules>
         <module>java-custom-validation</module>
-        <module>java-predicates</module>
-        <module>java-http</module>
         <module>java-design-patterns</module>
-        <module>java-generics</module>
         <module>java-ejercicios</module>
         <module>java-filemanager</module>
+        <module>java-generics</module>
+        <module>java-http</module>
         <module>java-junit5</module>
+        <module>java-predicates</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
-        <junit-plataform.version>5.3.1</junit-plataform.version>
 
-        <apache.commons-lang3.version>3.10</apache.commons-lang3.version>
+        <junit-plataform.version>5.3.1</junit-plataform.version>
+        <mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
+
         <lombok.version>1.18.10</lombok.version>
+        <apache.commons-lang3.version>3.10</apache.commons-lang3.version>
+        <hamcrest.version>1.3</hamcrest.version>
+
     </properties>
+
+    <dependencies>
+
+        <!-- Utility dependencies -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Apache Utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons-lang3.version}</version>
+        </dependency>
+
+        <!-- JUnit5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-plataform.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-plataform.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-plataform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Third-party assertion libraries -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
