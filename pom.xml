@@ -40,6 +40,26 @@
 
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+
+<!--            Esta dependencia es una dependencia transitiva, osea-->
+<!--            que se encuentra dentro de:-->
+<!--            junit-jupiter-params & mockito-junit-jupiter con diferentes-->
+<!--            versiones, para forzar a que se use la especificada sin basarnos-->
+<!--            en el orden tree, es recomendable usar maven-enforcer-plugin, pero-->
+<!--            como todavía no lo se aplicar bien jaja, entoces esta es otra forma-->
+<!--            locktable maven-->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-plataform.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
 
         <!-- Utility dependencies -->
@@ -58,11 +78,6 @@
         </dependency>
 
         <!-- JUnit5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-plataform.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -117,6 +132,30 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+<!--                                https://maven.apache.org/enforcer/enforcer-rules/-->
+                                <dependencyConvergence>
+                                    <uniqueVersions>true</uniqueVersions>
+                                </dependencyConvergence>
+                                <banCircularDependencies />
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
