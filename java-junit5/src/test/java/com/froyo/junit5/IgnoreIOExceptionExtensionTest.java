@@ -5,8 +5,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class IgnoreIOExceptionExtensionTest {
 
     @ExtendWith(IgnoreIOExceptionExtension.class)
