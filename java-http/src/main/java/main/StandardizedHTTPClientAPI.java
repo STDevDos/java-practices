@@ -10,49 +10,56 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.logging.Logger;
 
+/**
+ * Java HttpClient incluida desde la versión de Java 9
+ */
 public class StandardizedHTTPClientAPI {
 
-	public void execute() {
+    public void execute() {
 
-		final Logger logger = Logger.getLogger(StandardizedHTTPClientAPI.class.getPackageName());
+        final Logger logger = Logger.getLogger(StandardizedHTTPClientAPI.class.getPackageName());
 
-		HttpClient httpClient = HttpClient.newBuilder().version(Version.HTTP_2) // this is the default
-				.build();
+        HttpClient httpClient = HttpClient.newBuilder() //
+                .version(Version.HTTP_2) // this is the default
+                .build();
 
-		// Start HttpRequest GET
-		// ------------------------------------------------------------
-		HttpRequest requestBitsoTicker = HttpRequest.newBuilder().uri(URI.create("https://api.bitso.com/v3/ticker/"))
-				.GET() // this is the default
-				.build();
+        // Start HttpRequest GET
+        // ------------------------------------------------------------
+        HttpRequest requestBitsoTicker = HttpRequest.newBuilder() //
+                .uri(URI.create("https://api.bitso.com/v3/ticker/")) //
+                .GET() // this is the default
+                .build();
 
-		printLogger(logger, httpClient, requestBitsoTicker);
-		// End HttpRequest GET
-		// ------------------------------------------------------------
+        printLogger(logger, httpClient, requestBitsoTicker);
+        // End HttpRequest GET
+        // ------------------------------------------------------------
 
-		// Start HttpRequest POST
-		// ------------------------------------------------------------
-		HttpRequest mainRequest = HttpRequest.newBuilder().uri(URI.create("https://http2.github.io/"))
-				.POST(BodyPublishers.ofString("json")).build();
+        // Start HttpRequest POST
+        // ------------------------------------------------------------
+        HttpRequest mainRequest = HttpRequest.newBuilder() //
+                .uri(URI.create("https://http2.github.io/")) //
+                .POST(BodyPublishers.ofString("json")) //
+                .build();
 
-		printLogger(logger, httpClient, mainRequest);
-		// End HttpRequest POST
-		// ------------------------------------------------------------
+        printLogger(logger, httpClient, mainRequest);
+        // End HttpRequest POST
+        // ------------------------------------------------------------
 
-	}
+    }
 
-	private void printLogger(Logger logger, HttpClient httpClient, HttpRequest requestBitsoTicker) {
-		try {
-			HttpResponse<String> response = httpClient.send(requestBitsoTicker, BodyHandlers.ofString());
+    private void printLogger(Logger logger, HttpClient httpClient, HttpRequest requestBitsoTicker) {
+        try {
+            HttpResponse<String> response = httpClient.send(requestBitsoTicker, BodyHandlers.ofString());
 
-			logger.info("Response status code: " + response.statusCode());
-			logger.info("Response headers: " + response.headers());
-			logger.info("Response body: " + response.body());
+            logger.info("Response status code: " + response.statusCode());
+            logger.info("Response headers: " + response.headers());
+            logger.info("Response body: " + response.body());
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

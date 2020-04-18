@@ -6,8 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
 import org.apache.commons.text.WordUtils;
 
-import java.lang.reflect.Method;
-
 
 public class AppDesignPatternStrategy1 {
 
@@ -25,7 +23,7 @@ public class AppDesignPatternStrategy1 {
         Object profitFromSaleInvoke = MethodUtils.invokeMethod(vendedorNivelTest, "profitFromSale", 50);
 
         System.out.println(profitFromSaleInvoke);
-        VendedorNivel vendedorNivelTest2 = new VendedorNivel( (StrategyVendedor) vendedorNivelTest);
+        VendedorNivel vendedorNivelTest2 = new VendedorNivel((StrategyVendedor) vendedorNivelTest);
         System.out.println(vendedorNivelTest2.profitFromSale(50));
 
     }
