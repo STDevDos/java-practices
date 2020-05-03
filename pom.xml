@@ -18,7 +18,7 @@
         <module>java-ejercicios</module>
         <module>java-filemanager</module>
         <module>java-generics</module>
-        <module>java-http</module>
+        <module>java-java9</module>
         <module>java-junit5</module>
     </modules>
 

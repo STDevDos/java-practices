@@ -4,6 +4,7 @@ import lombok.extern.java.Log;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.owasp.esapi.ESAPI;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -13,6 +14,7 @@ public class AppQuick {
 
     public static void main(String[] args) {
 
+        ESAPI.encoder().encodeForHTML("");
 
     }
 

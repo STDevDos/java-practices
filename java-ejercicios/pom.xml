@@ -11,4 +11,22 @@
 
     <artifactId>java-ejercicios</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.owasp.esapi</groupId>
+            <artifactId>esapi</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.owasp.encoder</groupId>-->
+<!--            <artifactId>encoder</artifactId>-->
+<!--            <version>1.2.2</version>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+
+
 </project>
