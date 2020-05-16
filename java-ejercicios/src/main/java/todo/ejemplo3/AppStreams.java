@@ -1,4 +1,4 @@
-package ejemplo3;
+package todo.ejemplo3;
 
 import java.util.ArrayList;
 import java.util.HashSet;

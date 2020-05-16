@@ -1,4 +1,4 @@
-package ejemplo1;
+package todo.ejemplo1;
 
 import lombok.Data;
 

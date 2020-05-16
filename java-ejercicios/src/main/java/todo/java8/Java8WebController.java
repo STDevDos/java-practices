@@ -1,4 +1,4 @@
-package java8;
+package todo.java8;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -76,7 +76,7 @@ public class Java8WebController {
         testInts(val1++, ++val2);
         System.out.println(val1 + " " + val2);
 
-        return "java8";
+        return "todo/java8";
     }
 
     public static void testInts(Integer obj, int var) {
@@ -106,7 +106,7 @@ public class Java8WebController {
         IntStream ita = IntStream.range(0, 100);
         ita.forEach(System.out::println);
 
-        return "java8";
+        return "todo/java8";
     }
 
     /**
@@ -163,7 +163,7 @@ public class Java8WebController {
 
 //		empArrList.removeIf(e �?> e.getName().startsWith("S"));
 
-        return "java8";
+        return "todo/java8";
     }
 
     private static void printMethod() {
@@ -194,7 +194,7 @@ public class Java8WebController {
         System.out.println(t1.format(time));
         System.out.println(t2.format(time));
 
-        return "java8";
+        return "todo/java8";
     }
 
     public String javaListIterator() {
@@ -217,7 +217,7 @@ public class Java8WebController {
 
         System.out.println(lista2);
 
-        return "java8";
+        return "todo/java8";
     }
 
 
@@ -233,13 +233,13 @@ public class Java8WebController {
 
         System.out.println(listaString);
 
-        return "java8";
+        return "todo/java8";
     }
 
     public String stream() {
         probarStream();
         probarParalelo();
-        return "java8";
+        return "todo/java8";
     }
 
     private void probarStream() {
@@ -260,7 +260,7 @@ public class Java8WebController {
         orElse(null);
         orElseThrow(null);
         isPresent("s");
-        return "java8";
+        return "todo/java8";
     }
 
     private void probar() {
@@ -320,7 +320,7 @@ public class Java8WebController {
         mapAux.entrySet().stream().forEach(System.out::println);
 
 
-        return "java8";
+        return "todo/java8";
     }
 
     private void map_imprimir() {
@@ -353,7 +353,7 @@ public class Java8WebController {
             e1.printStackTrace();
         }
 
-        return "java8";
+        return "todo/java8";
     }
 
     private void llamarFunciones() throws Exception {

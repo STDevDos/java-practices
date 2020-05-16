@@ -1,4 +1,4 @@
-package ejemplo2;
+package todo.ejemplo2;
 
 import java.math.BigDecimal;
 

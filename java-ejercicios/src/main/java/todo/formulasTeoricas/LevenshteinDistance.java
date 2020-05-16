@@ -1,4 +1,4 @@
-package formulasTeoricas;
+package todo.formulasTeoricas;
 
 
 /**

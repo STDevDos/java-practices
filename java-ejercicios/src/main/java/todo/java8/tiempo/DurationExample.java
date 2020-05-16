@@ -1,4 +1,4 @@
-package java8.tiempo;
+package todo.java8.tiempo;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
