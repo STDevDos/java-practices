@@ -2,7 +2,6 @@ package todo.ejemplo1;
 
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Assertions;
 
 @Log
 public class AppEstudiante {

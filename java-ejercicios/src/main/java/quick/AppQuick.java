@@ -7,21 +7,27 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.owasp.esapi.ESAPI;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Log
 public class AppQuick {
 
     public static void main(String[] args) {
 
-        ESAPI.encoder().encodeForHTML("");
+        //ESAPI.encoder().encodeForHTML("");
+        quick3();
 
     }
 
+    public static void quick3(){
+        List<String> listString = null;
+        System.out.println(listString.isEmpty());
+    }
+
     public void quick2() {
-
         log.info(RandomStringUtils.randomAlphanumeric(4));
-
     }
 
     public void quick1() {
