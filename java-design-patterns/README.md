@@ -2,14 +2,15 @@
 
 > | Type | Design Pattern | Definición | Uses |
 > | --- | --- | --- | --- |
-> | Creational | Singleton | 
-> *   solution proposed to return same instance every time
-> *   restrict instantiation of a class more than once
+> | Creational | Singleton | solution proposed to return same instance every time  
+> restrict instantiation of a class more than once |   |
+> | \*  |   |   |   |
+> | \*  |   |   |   |
 > 
->  |   |
+> | |
 > 
-> | \* exactly one copy is available at any given point of time |   |   |   |
-> | \* ensures only one instance is available in a Java Virtual Machine |   |   |   |
+> | \* exactly one copy is available at any given point of time | | | |  
+> | \* ensures only one instance is available in a Java Virtual Machine | | | |
 > 
 > |
 > 
