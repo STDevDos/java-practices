@@ -1,8 +1,5 @@
 package designpatterns.behavioral.observer;
 
-/**
- * @author Froy
- */
 public class MXNObservador extends Observador {
 
     private double valorCambio = 19.30;

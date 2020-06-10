@@ -1,19 +1,12 @@
 package designpatterns.behavioral.memento;
 
-/**
- * @author Froy
- */
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class Memento {
 
     private Juego estado;
-
-    public Memento(Juego estado) {
-        this.estado = estado;
-    }
-
-    public Juego getEstado() {
-        return estado;
-    }
-
 
 }

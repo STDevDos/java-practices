@@ -11,8 +11,8 @@ public class AppDesignPatternStrategy1 {
 
     public static void main(String[] args) throws Exception {
 
-        VendedorNivel vendedorNivel = new VendedorNivel(new VendedorNivel1());
-        System.out.println(vendedorNivel.profitFromSale(50));
+        ContextVendedorNivel contextVendedorNivel = new ContextVendedorNivel(new VendedorNivel1());
+        System.out.println(contextVendedorNivel.profitFromSale(50));
 
         String tipoDeVendedorFromDatabase = "VENDEDOR_NIVEL_1";
         String tipoDeVendedorParsed = parseTipoDeVendedorLikeNameClass(tipoDeVendedorFromDatabase);
@@ -21,10 +21,11 @@ public class AppDesignPatternStrategy1 {
 
         Object vendedorNivelTest = clazz.getDeclaredConstructor().newInstance();
         Object profitFromSaleInvoke = MethodUtils.invokeMethod(vendedorNivelTest, "profitFromSale", 50);
-
         System.out.println(profitFromSaleInvoke);
-        VendedorNivel vendedorNivelTest2 = new VendedorNivel((StrategyVendedor) vendedorNivelTest);
-        System.out.println(vendedorNivelTest2.profitFromSale(50));
+
+        //like ...this way
+        ContextVendedorNivel contextVendedorNivelTest2 = new ContextVendedorNivel((StrategyVendedor) vendedorNivelTest);
+        System.out.println(contextVendedorNivelTest2.profitFromSale(50));
 
     }
 

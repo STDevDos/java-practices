@@ -3,9 +3,6 @@ package designpatterns.behavioral.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Froy
- */
 public class Subject {
 
     private List<Observador> observadores = new ArrayList<>();
@@ -26,7 +23,6 @@ public class Subject {
 
     private void notificarTodosObservadores() {
         observadores.forEach(o -> o.actualizar());
-
     }
 
 

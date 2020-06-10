@@ -11,9 +11,6 @@ import designpatterns.behavioral.observer.Subject;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
 public class AppBehaviral {
 
     public static void main(String[] args) throws IOException {
@@ -39,6 +36,8 @@ public class AppBehaviral {
         String nombreJuego = "Juemento";
 
         Juego juego = new Juego(nombreJuego, 1);
+        originator.setEstado(juego);
+
         juego = new Juego(nombreJuego, 2);
         originator.setEstado(juego);
 

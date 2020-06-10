@@ -1,8 +1,5 @@
 package todo.java8;
 
-/**
- * @author Froy
- */
 public class AppJava8 {
 
     public static void main(String[] args) {

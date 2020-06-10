@@ -15,7 +15,6 @@ import java.io.IOException;
 import static designpatterns.creational.abstractfactory.ConnectionType.*;
 
 /**
- * @author Froy
  * {@link https://www.journaldev.com/1827/java-design-patterns-example-tutorial}
  */
 @Log

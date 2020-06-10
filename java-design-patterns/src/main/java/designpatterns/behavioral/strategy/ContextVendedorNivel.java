@@ -1,14 +1,13 @@
 package designpatterns.behavioral.strategy;
 
+import lombok.AllArgsConstructor;
+
 import java.math.BigDecimal;
 
-public class VendedorNivel {
+@AllArgsConstructor
+public class ContextVendedorNivel {
 
     private StrategyVendedor strategyVendedor;
-
-    public VendedorNivel(StrategyVendedor strategyVendedor){
-        this.strategyVendedor = strategyVendedor;
-    }
 
     public BigDecimal profitFromSale(int cantidadDeProductoVendido){
         return strategyVendedor.profitFromSale(cantidadDeProductoVendido);

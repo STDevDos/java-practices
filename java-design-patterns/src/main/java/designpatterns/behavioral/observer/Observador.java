@@ -1,8 +1,5 @@
 package designpatterns.behavioral.observer;
 
-/**
- * @author Froy
- */
 public abstract class Observador {
 
     protected Subject sujeto;

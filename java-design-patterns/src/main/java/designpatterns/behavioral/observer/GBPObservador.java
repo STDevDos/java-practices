@@ -1,8 +1,5 @@
 package designpatterns.behavioral.observer;
 
-/**
- * @author Froy
- */
 public class GBPObservador extends Observador {
 
     private double valorCambio = 0.77;

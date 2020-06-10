@@ -2,9 +2,6 @@ package todo.ejemplo1;
 
 import java.util.ArrayList;
 
-/**
- * @author Froy
- */
 public class EscuelaServiceImpl {
 
     public Estudiante obtenerEstudiante() {

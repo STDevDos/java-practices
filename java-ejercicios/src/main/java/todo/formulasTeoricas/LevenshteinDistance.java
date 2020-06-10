@@ -2,7 +2,6 @@ package todo.formulasTeoricas;
 
 
 /**
- * @author Froy
  * https://es.wikipedia.org/wiki/Distancia_de_Levenshtein
  */
 public class LevenshteinDistance {

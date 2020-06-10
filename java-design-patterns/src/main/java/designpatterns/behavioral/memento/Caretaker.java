@@ -1,13 +1,11 @@
 package designpatterns.behavioral.memento;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @author Froy
- */
 public class Caretaker {
 
-    private ArrayList<Memento> mementos = new ArrayList<>();
+    private List<Memento> mementos = new ArrayList<>();
 
     public void addMemento(Memento m) {
         mementos.add(m);
