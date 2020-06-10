@@ -1,24 +1,16 @@
 package designpatterns.creational.abstractfactory;
 
-/**
- * @author Froy
- */
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class FactoryDBConnection {
 
-    private FactoryDBConnection() {
-        throw new IllegalArgumentException("NOT VALID.");
-    }
-
-    public static DBConfig getInstance(RequestConnection requestConnection) {
-        switch (requestConnection) {
-            case MYSQL:
-                return new DBConnectionMySQL();
-            case POSTGRESQL:
-                return new DBConnectionPostgreSQL();
-            case REST:
-                return new DBRest();
-            default:
-                return null;
+    public static DBConfig getInstance(ConnectionType connectionType) {
+        switch (connectionType) {
+            case MYSQL: return new DBConnectionMySQL();
+            case POSTGRESQL: return new DBConnectionPostgreSQL();
+            case REST: return new DBRest();
+            default: return null;
         }
     }
 }

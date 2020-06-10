@@ -3,36 +3,46 @@ package designpatterns.creational;
 import designpatterns.creational.abstractfactory.DBConfig;
 import designpatterns.creational.abstractfactory.DBConnection;
 import designpatterns.creational.abstractfactory.FactoryDBConnection;
-import designpatterns.creational.abstractfactory.RequestConnection;
+import designpatterns.creational.factorymethod.ViewRequest;
+import designpatterns.creational.factorymethod.ViewRequestFactory;
 import designpatterns.creational.prototype.Employee;
 import designpatterns.creational.prototype.EmployeeAddress;
 import designpatterns.creational.singleton.DatabaseConfig;
+import lombok.extern.java.Log;
 
 import java.io.IOException;
+
+import static designpatterns.creational.abstractfactory.ConnectionType.*;
 
 /**
  * @author Froy
  * {@link https://www.journaldev.com/1827/java-design-patterns-example-tutorial}
  */
+@Log
 public class AppCreational {
 
     public static void main(String[] args) throws IOException {
 
         //Singleton Pattern ----------------------------------
         DatabaseConfig databaseConfigSingleton = DatabaseConfig.getInstance();
-        System.out.println(databaseConfigSingleton.toString());
+        log.info(databaseConfigSingleton.toString());
+
+        //Factory Method ----------------------------------
+        ViewRequestFactory factory = new ViewRequestFactory();
+        ViewRequest viewRequest = factory.getViewRequest("two");
+        viewRequest.executeProcess();
 
         //Factory Pattern ----------------------------------
-        DBConnection dbConnectionMysql = (DBConnection) FactoryDBConnection.getInstance(RequestConnection.MYSQL);
-        System.out.println(dbConnectionMysql.connect());
-        DBConnection dbConnectionPostgresSQL = (DBConnection) FactoryDBConnection.getInstance(RequestConnection.POSTGRESQL);
-        System.out.println(dbConnectionPostgresSQL.connect());
+        DBConnection dbConnectionMysql = (DBConnection) FactoryDBConnection.getInstance(MYSQL);
+        log.info(dbConnectionMysql.connect());
+        DBConnection dbConnectionPostgresSQL = (DBConnection) FactoryDBConnection.getInstance(POSTGRESQL);
+        log.info(dbConnectionPostgresSQL.connect());
 
         //Abstract Factory Pattern ----------------------------------
-        DBConfig dbConfigMySQL = FactoryDBConnection.getInstance(RequestConnection.MYSQL);
-        System.out.println(dbConfigMySQL.connect());
-        DBConfig dbConfigRest = FactoryDBConnection.getInstance(RequestConnection.REST);
-        System.out.println(dbConfigRest.connect());
+        DBConfig dbConfigMySQL = FactoryDBConnection.getInstance(MYSQL);
+        log.info(dbConfigMySQL.connect());
+        DBConfig dbConfigRest = FactoryDBConnection.getInstance(REST);
+        log.info(dbConfigRest.connect());
 
         //Prototype Pattern ----------------------------------
         EmployeeAddress empAddress = new EmployeeAddress("22", "Avenue Street", "Dallas");
@@ -43,7 +53,9 @@ public class AppCreational {
         } catch (CloneNotSupportedException cnse) {
             cnse.printStackTrace();
         }
-        System.out.println("Cloned Employee Object: " + empClone);
+        System.out.println(emp == empClone);
+        log.info("Original Employee Object: " + emp);
+        log.info("Cloned Employee Object: " + empClone);
 
 
     }

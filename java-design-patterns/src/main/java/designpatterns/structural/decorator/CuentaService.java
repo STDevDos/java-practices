@@ -1,8 +1,5 @@
 package designpatterns.structural.decorator;
 
-/**
- * @author Froy
- */
-public interface ICuenta {
+public interface CuentaService {
     void abrirCuenta(Cuenta cuenta);
 }

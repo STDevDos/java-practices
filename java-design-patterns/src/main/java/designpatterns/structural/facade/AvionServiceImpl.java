@@ -1,9 +1,6 @@
 package designpatterns.structural.facade;
 
-/**
- * @author Froy
- */
-public class AvionAPI implements IFachada {
+public class AvionServiceImpl implements FachadaService {
 
     public String buscar(FachadaRequest fachadaRequest) {
         return "obteniendo todos los Aviones con los valores pasados por paramteros.";

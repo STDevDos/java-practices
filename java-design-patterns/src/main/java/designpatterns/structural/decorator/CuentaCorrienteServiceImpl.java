@@ -1,9 +1,6 @@
 package designpatterns.structural.decorator;
 
-/**
- * @author Froy
- */
-public class CuentaCorrienteImpl implements ICuenta {
+public class CuentaCorrienteServiceImpl implements CuentaService {
 
     public void abrirCuenta(Cuenta cuenta) {
         System.out.println("Abrir cuenta Coerriente");

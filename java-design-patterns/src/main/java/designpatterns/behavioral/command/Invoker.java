@@ -3,10 +3,7 @@ package designpatterns.behavioral.command;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Froy
- */
-public class Invoker {
+public class  Invoker {
 
     private List<SaldoFamiliarService> listSaldoFamiliar = new ArrayList<>();
 

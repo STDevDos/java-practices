@@ -1,21 +1,15 @@
 package designpatterns.behavioral.command;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.math.BigDecimal;
 
-/**
- * @author Froy
- */
+@Getter
+@AllArgsConstructor
 public class SaldoFamiliar {
 
     private BigDecimal saldo;
-
-    public SaldoFamiliar(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
 
     public void ingreso(BigDecimal monto) {
         this.saldo = this.saldo.add(monto);

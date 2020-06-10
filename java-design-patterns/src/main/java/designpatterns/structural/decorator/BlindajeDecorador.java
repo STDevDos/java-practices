@@ -1,23 +1,19 @@
 package designpatterns.structural.decorator;
 
-/**
- * @author Froy
- */
-public class BlindajeDecorador extends CuentaDecorador {
+public class BlindajeDecorador extends CuentaServiceDecorador {
 
-    public BlindajeDecorador(ICuenta icuenta) {
-        super(icuenta);
+    public BlindajeDecorador(CuentaService cuentaService) {
+        super(cuentaService);
     }
 
     @Override
     public void abrirCuenta(Cuenta cuenta) {
-        this.icuenta.abrirCuenta(cuenta);
+        this.cuentaService.abrirCuenta(cuenta);
         agregarBlindaje();
     }
 
     private void agregarBlindaje() {
         System.out.println("Se añadió Blindaje a la cuenta.");
-
     }
 
 }

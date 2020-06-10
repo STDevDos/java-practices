@@ -1,8 +1,5 @@
 package designpatterns.structural.facade;
 
-/**
- * @author Froy
- */
 public class FachadaRequest {
 
     private String fechaInicial;

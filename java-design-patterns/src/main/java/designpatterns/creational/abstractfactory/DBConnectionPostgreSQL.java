@@ -1,8 +1,5 @@
 package designpatterns.creational.abstractfactory;
 
-/**
- * @author Froy
- */
 public class DBConnectionPostgreSQL extends DBConnection {
 
     public DBConnectionPostgreSQL() {

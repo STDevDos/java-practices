@@ -1,8 +1,8 @@
 package designpatterns.creational.prototype;
 
-/**
- * @author Froy
- */
+import lombok.Data;
+
+@Data
 public class Employee implements Cloneable {
 
     private String name;
@@ -12,30 +12,6 @@ public class Employee implements Cloneable {
     public Employee(String name, Integer age, EmployeeAddress address) {
         this.name = name;
         this.age = age;
-        this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public EmployeeAddress getAddress() {
-        return address;
-    }
-
-    public void setAddress(EmployeeAddress address) {
         this.address = address;
     }
 
@@ -52,19 +28,6 @@ public class Employee implements Cloneable {
         );
         return employee;
 
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Employee [name=");
-        builder.append(name);
-        builder.append(", age=");
-        builder.append(age);
-        builder.append(", address=");
-        builder.append(address);
-        builder.append("]");
-        return builder.toString();
     }
 
 

@@ -1,38 +1,39 @@
 package designpatterns.structural;
 
 import designpatterns.structural.decorator.*;
-import designpatterns.structural.facade.Fachada;
 import designpatterns.structural.facade.FachadaRequest;
+import designpatterns.structural.facade.FachadaServiceImpl;
 import designpatterns.structural.proxy.CuentaBancaria;
-import designpatterns.structural.proxy.CuentaService;
 import designpatterns.structural.proxy.CuentaServiceProxy;
+import lombok.extern.java.Log;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
+@Log
 public class AppStructural {
 
     public static void main(String[] args) throws IOException {
 
         // Facade pattern -------------------------------
-        Fachada fachada = new Fachada();
-        String result = fachada.buscar(new FachadaRequest("25/12/2019", "28/12/2018", "Guadalajara", "Vallarta"));
-        System.out.println(result);
+        FachadaServiceImpl fachadaServiceImpl = new FachadaServiceImpl();
+        String result = fachadaServiceImpl.buscar(new FachadaRequest("25/12/2019", "28/12/2018", "Guadalajara", "Vallarta"));
+        log.info(result);
 
         // Decorator pattern -------------------------------
         Cuenta cuenta = new Cuenta(1L, "Froy");
-        ICuenta icuenta = new CuentaAhorroImpl();
-        icuenta.abrirCuenta(cuenta);
+        CuentaService cuentaService1 = new CuentaAhorroServiceImpl();
+        cuentaService1.abrirCuenta(cuenta);
 
-        ICuenta icuenta2 = new CuentaCorrienteImpl();
-        icuenta2.abrirCuenta(cuenta);
+        CuentaService cuentaService2 = new CuentaCorrienteServiceImpl();
+        cuentaService2.abrirCuenta(cuenta);
 
-        ICuenta icuenta3 = new BlindajeDecorador(new CuentaCorrienteImpl());
-        icuenta3.abrirCuenta(cuenta);
+        CuentaService cuentaService3 = new BlindajeDecorador(new CuentaCorrienteServiceImpl());
+        cuentaService3.abrirCuenta(cuenta);
 
         // Proxy pattern -------------------------------
         CuentaBancaria cuentaBancaria = new CuentaBancaria(25L, "Froy", BigDecimal.TEN);
-        CuentaService cuentaService = new CuentaServiceProxy();
+        designpatterns.structural.proxy.CuentaService cuentaService = new CuentaServiceProxy();
         cuentaService.mostrar(cuentaBancaria);
         cuentaService.depositar(cuentaBancaria, new BigDecimal("30"));
         cuentaService.mostrar(cuentaBancaria);

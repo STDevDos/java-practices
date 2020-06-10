@@ -1,8 +1,5 @@
 package designpatterns.creational.abstractfactory;
 
-/**
- * @author Froy
- */
 public class DBConnectionMySQL extends DBConnection {
 
     public DBConnectionMySQL() {

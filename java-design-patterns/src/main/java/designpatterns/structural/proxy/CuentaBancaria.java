@@ -5,16 +5,12 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 public class CuentaBancaria {
 
     private Long idCuenta;
     private String nombre;
     private BigDecimal saldo;
-
-    private CuentaBancaria() {
-        throw new IllegalArgumentException("NOT VALID");
-    }
 
 }

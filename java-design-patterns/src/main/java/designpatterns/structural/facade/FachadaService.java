@@ -1,8 +1,5 @@
 package designpatterns.structural.facade;
 
-/**
- * @author Froy
- */
-public interface IFachada {
+public interface FachadaService {
     String buscar(FachadaRequest fachadaRequest);
 }

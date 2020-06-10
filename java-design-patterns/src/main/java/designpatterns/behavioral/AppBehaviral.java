@@ -21,7 +21,7 @@ public class AppBehaviral {
         // Command Pattern ----------------------------------
         SaldoFamiliar saldoFamiliar = new SaldoFamiliar(new BigDecimal("10")); // Inicial
 
-        SaldoFamiliarService saldoIngreso = new SaldoIngresoImpl(saldoFamiliar, new BigDecimal("100"));
+        SaldoFamiliarService saldoIngreso = new SaldoIngresoServiceImpl(saldoFamiliar, new BigDecimal("100"));
         SaldoFamiliarService saldoGasto = new SaldoGastoServiceImpl(saldoFamiliar, new BigDecimal("5"));
 
         Invoker invoker = new Invoker();
@@ -29,6 +29,7 @@ public class AppBehaviral {
         invoker.recibirMovimientos(saldoGasto);
 
         invoker.realizarOperaciones();
+
         System.out.println(saldoFamiliar.getSaldo());
 
         // Memento Pattern ----------------------------------

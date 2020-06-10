@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 
 @AllArgsConstructor
-public class SaldoGastoServiceImpl implements SaldoFamiliarService {
+public class SaldoIngresoServiceImpl implements SaldoFamiliarService {
 
     private SaldoFamiliar saldoFamiliar;
     private BigDecimal monto;
 
     public void execute() {
-        this.saldoFamiliar.gasto(this.monto);
+        this.saldoFamiliar.ingreso(this.monto);
     }
 
 }
