@@ -1,6 +1,6 @@
 # java-design-patterns
 
-<table><tbody><tr><td>Creational-Singleton</td><td>solution proposed to return same instance every time<br>restrict instantiation of a class more than once</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+<table><tbody><tr><td>Creational</td><td>Singleton</td><td>-solution proposed to return same instance every time<br>-restrict instantiation of a class more than once<br>-exactly one copy is available at any given point of time<br>-ensures only one instance is available in a Java Virtual Machine</td><td>-multi-threaded<br>-spring framework</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
 
 > | Type | Design Pattern | Definición | Uses |
 > | --- | --- | --- | --- |
