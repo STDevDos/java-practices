@@ -1,11 +1,13 @@
 # java-design-patterns
 
+<table><tbody><tr><td>Creational-Singleton</td><td>solution proposed to return same instance every time<br>restrict instantiation of a class more than once</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+
 > | Type | Design Pattern | Definición | Uses |
 > | --- | --- | --- | --- |
-> | Creational | Singleton | solution proposed to return same instance every time  
-> restrict instantiation of a class more than once |   |
-> | \*  |   |   |   |
-> | \*  |   |   |   |
+> | Creational | Singleton | solution proposed to return same instance every time |   |
+> | restrict instantiation of a class more than once |   |   |   |
+> | \* |   |   |   |
+> | \* |   |   |   |
 > 
 > | |
 > 
