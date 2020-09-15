@@ -1,11 +1,9 @@
 package quick;
 
 import lombok.extern.java.Log;
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.owasp.esapi.ESAPI;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -17,7 +15,47 @@ public class AppQuick {
     public static void main(String[] args) {
 
         //ESAPI.encoder().encodeForHTML("");
-        quick6();
+//        quick6();
+
+//        AtomicInteger atomicInteger = new AtomicInteger();
+//        System.out.println(atomicInteger.getAndIncrement());
+//        System.out.println(atomicInteger.getAndIncrement());
+//        System.out.println(atomicInteger);
+//
+//        // Initially value as 18
+//        AtomicInteger val = new AtomicInteger();
+//
+//        System.out.println("Previous value: " + val.getAndIncrement());
+//        // Prints the updated value
+//        System.out.println("Current value: "  + val);
+
+        quick7();
+
+
+    }
+
+    public static void quick7(){
+
+        Map<String,String> map = new HashMap<>();
+        map.put("1","uno");
+//        map.put("2","dos");
+        map.put("3","tres");
+//        map.put("4","cuatro");
+
+        List<String> listString = new ArrayList<>(map.keySet());
+
+        List<Integer> listInteger = new ArrayList<>();
+        listInteger.add(1);
+        listInteger.add(2);
+        listInteger.add(3);
+        listInteger.add(4);
+
+        Collections.reverse(listString);
+        for(String index : listString){
+            listInteger.remove(Integer.valueOf(index));
+        }
+
+        System.out.println(listInteger);
 
     }
 
@@ -27,6 +65,10 @@ public class AppQuick {
         BigDecimal bigDecimalB = new BigDecimal(49);
 
         System.out.println(bigDecimalA.compareTo(bigDecimalB) > 0);
+
+        Persona persona = new Persona();
+        persona.setNombre("Loco");
+        System.out.println(Optional.ofNullable(persona).map(Persona::getNombre).orElse("Chato"));
 
     }
 
@@ -79,6 +121,18 @@ public class AppQuick {
             pe.printStackTrace();
         }
 
+    }
+
+    static class Persona {
+        private String nombre;
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
     }
 
 }

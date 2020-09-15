@@ -19,14 +19,21 @@
             <version>2.1.0</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.owasp.encoder</groupId>-->
-<!--            <artifactId>encoder</artifactId>-->
-<!--            <version>1.2.2</version>-->
-<!--        </dependency>-->
+        <!-- Para el ReflectionExample -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
 
-    </dependencies>
+        <!-- el testeo de moneda -->
+        <dependency>
+            <groupId>org.javamoney</groupId>
+            <artifactId>moneta</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+</dependencies>
 
 
-
-</project>
+        </project>
