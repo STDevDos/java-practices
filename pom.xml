@@ -13,35 +13,15 @@
     <description>Java Practice</description>
 
     <modules>
-        <module>java-custom-validation</module>
+        <!--        <module>java-custom-validation</module>-->
         <module>java-design-patterns</module>
-        <module>java-ejercicios</module>
-        <module>java-filemanager</module>
+        <!--        <module>java-ejercicios</module>-->
+        <!--        <module>java-filemanager</module>-->
         <module>java-generics</module>
-        <module>java-java9</module>
-        <module>java-junit5</module>
+        <!--        <module>java-java9</module>-->
+        <!--        <module>java-junit5</module>-->
+        <module>java-java15</module>
     </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
-
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-
-        <junit-plataform.version>5.6.1</junit-plataform.version>
-        <mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
-        <hamcrest.version>2.2</hamcrest.version>
-
-        <lombok.version>1.18.12</lombok.version>
-        <apache.commons-lang3.version>3.10</apache.commons-lang3.version>
-        <apache.commons-text.version>1.8</apache.commons-text.version>
-        <validation-api.version>2.0.0.Final</validation-api.version>
-
-
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -114,63 +94,34 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <source>15</source>
+                    <target>15</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
-
-            <!-- https://maven.apache.org/plugins/maven-dependency-plugin/ -->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-dependency-plugin</artifactId>-->
-<!--                <version>3.1.2</version>-->
-<!--            </plugin>-->
-
-            <!-- mvn versions:display-dependency-updates
-            plugin para identificar las últimas versiones de las
-            dependencias inyectadas en el POM
-            -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <excludes>
-                        <exclude>org.apache.commons:commons-collections4</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-<!--                                https://maven.apache.org/enforcer/enforcer-rules/-->
-                                <dependencyConvergence>
-                                    <uniqueVersions>true</uniqueVersions>
-                                </dependencyConvergence>
-                                <banCircularDependencies />
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>15</java.version>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+
+        <junit-plataform.version>5.6.1</junit-plataform.version>
+        <mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
+        <hamcrest.version>2.2</hamcrest.version>
+
+        <lombok.version>1.18.12</lombok.version>
+        <apache.commons-lang3.version>3.10</apache.commons-lang3.version>
+        <apache.commons-text.version>1.8</apache.commons-text.version>
+        <validation-api.version>2.0.0.Final</validation-api.version>
+
+    </properties>
 
 </project>
