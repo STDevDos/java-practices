@@ -12,8 +12,10 @@ public class StringChanges {
 
         var textBlock = """
                 Name | Address | City
-                Bob Smith | 123 Anytown St\nApt 100 | Vancouver
-                Jon Brown | 1000 Golden Place\nSuite 5 | Santa Ana
+                Bob Smith | 123 Anytown St
+                Apt 100 | Vancouver
+                Jon Brown | 1000 Golden Place
+                Suite 5 | Santa Ana
                 """;
         System.out.println(textBlock);
 
