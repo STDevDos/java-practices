@@ -1,10 +1,6 @@
 package designpatterns.creational.abstractfactory;
 
-import lombok.ToString;
-
-@ToString
 public abstract class DBConnection extends DBConfig {
-
     private String url;
     private String port;
     private String user;
@@ -23,4 +19,9 @@ public abstract class DBConnection extends DBConfig {
         return ":: DBConnection - connected ::";
     }
 
+    @java.lang.Override
+    @java.lang.SuppressWarnings("all")
+    public java.lang.String toString() {
+        return "DBConnection(url=" + this.url + ", port=" + this.port + ", user=" + this.user + ", pass=" + this.pass + ")";
+    }
 }

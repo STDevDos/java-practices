@@ -1,18 +1,10 @@
 package designpatterns.creational.singleton;
 
-import lombok.Getter;
-import lombok.ToString;
-
 import java.io.Serializable;
 
-@Getter
-@ToString
 public class DatabaseConfig implements Serializable {
-
     private static final long serialVersionUID = 3374603135957280336L;
-
     private static DatabaseConfig instance;
-
     private String url;
     private String port;
     private String user;
@@ -32,4 +24,29 @@ public class DatabaseConfig implements Serializable {
         return instance;
     }
 
+    @java.lang.SuppressWarnings("all")
+    public String getUrl() {
+        return this.url;
+    }
+
+    @java.lang.SuppressWarnings("all")
+    public String getPort() {
+        return this.port;
+    }
+
+    @java.lang.SuppressWarnings("all")
+    public String getUser() {
+        return this.user;
+    }
+
+    @java.lang.SuppressWarnings("all")
+    public String getPass() {
+        return this.pass;
+    }
+
+    @java.lang.Override
+    @java.lang.SuppressWarnings("all")
+    public java.lang.String toString() {
+        return "DatabaseConfig(url=" + this.getUrl() + ", port=" + this.getPort() + ", user=" + this.getUser() + ", pass=" + this.getPass() + ")";
+    }
 }

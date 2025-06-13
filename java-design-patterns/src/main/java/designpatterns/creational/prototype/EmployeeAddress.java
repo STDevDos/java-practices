@@ -1,12 +1,6 @@
 package designpatterns.creational.prototype;
 
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
 public class EmployeeAddress {
-
     private String houseNo;
     private String street;
     private String city;
@@ -18,4 +12,24 @@ public class EmployeeAddress {
         this.city = city;
     }
 
+    @java.lang.SuppressWarnings("all")
+    public String getHouseNo() {
+        return this.houseNo;
+    }
+
+    @java.lang.SuppressWarnings("all")
+    public String getStreet() {
+        return this.street;
+    }
+
+    @java.lang.SuppressWarnings("all")
+    public String getCity() {
+        return this.city;
+    }
+
+    @java.lang.Override
+    @java.lang.SuppressWarnings("all")
+    public java.lang.String toString() {
+        return "EmployeeAddress(houseNo=" + this.getHouseNo() + ", street=" + this.getStreet() + ", city=" + this.getCity() + ")";
+    }
 }

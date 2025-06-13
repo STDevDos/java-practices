@@ -1,13 +1,11 @@
 package junit.things;
 
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 
-@Log
 public class ModelA {
+    @java.lang.SuppressWarnings("all")
+    private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(ModelA.class.getName());
 
-    public void elMetodo(){
+    public void elMetodo() {
         log.info("@@@ elMetodo() :: ModelA :: ");
     }
-
 }

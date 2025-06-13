@@ -1,6 +1,6 @@
 package money;
 
-import lombok.extern.java.Log;
+import java.util.logging.Logger;
 import org.javamoney.moneta.FastMoney;
 import org.javamoney.moneta.Money;
 import org.junit.jupiter.api.Test;
@@ -13,8 +13,9 @@ import javax.money.convert.MonetaryConversions;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Log
+
 public class CurrencyUnitTest {
+    private static final Logger log = Logger.getLogger(CurrencyUnitTest.class.getName());
 
     @Test
     public void givenCurrencyCode_whenString_thanExist() {

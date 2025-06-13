@@ -1,7 +1,5 @@
 package com.froyo.junit5.parameterizedTests;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -20,15 +18,38 @@ public class MethodSourceObjectsParameterizedTest {
     @ParameterizedTest
     @MethodSource("personProvider")
     void testWithPersonProvider(Person argument) {
-        System.out.println("Parameterized test with (Person) argument: " +  argument);
+        System.out.println("Parameterized test with (Person) argument: " + argument);
         assertNotNull(argument);
     }
 
-    @Data
-    @AllArgsConstructor
     static class Person {
         String name;
         String surname;
-    }
 
+        Person(String name, String surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getSurname() {
+            return surname;
+        }
+
+        public void setSurname(String surname) {
+            this.surname = surname;
+        }
+
+        @Override
+        public String toString() {
+            return "Person(name=" + name + ", surname=" + surname + ")";
+        }
+    }
 }
