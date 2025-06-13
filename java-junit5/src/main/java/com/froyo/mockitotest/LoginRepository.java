@@ -17,8 +17,8 @@ public class LoginRepository {
     public boolean login(UserForm userForm) {
         System.out.println("LoginRepository.login " + userForm);
         String username = userForm.getUsername();
-        String password = "FROY_PASS"; //userForm.getPassword();
-        return users.keySet().contains(username)
+        String password = userForm.getPassword();
+        return users.containsKey(username)
                 && users.get(username).equals(password);
     }
 

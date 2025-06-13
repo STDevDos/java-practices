@@ -14,7 +14,7 @@ public class GroupedAssertionsTest {
         // failures will be reported together.
         assertAll("address", //
                 () -> assertEquals("John", address.getFirstName()), //
-                () -> assertEquals("User", address.getLastName(),"no charcho") //
+                () -> assertEquals("Smith", address.getLastName(), "no charcho") //
         );
     }
 

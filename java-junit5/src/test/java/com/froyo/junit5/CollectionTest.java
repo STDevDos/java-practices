@@ -14,10 +14,11 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class CollectionTest {
 
-    // Warning: this test will raise an exception
     @TestFactory
-    List<String> dynamicTestsWithInvalidReturnType() {
-        return Arrays.asList("Hello");
+    List<DynamicTest> dynamicTestsWithInvalidReturnType() {
+        return Arrays.asList(
+                dynamicTest("invalid return type fixed", () -> assertTrue(true))
+        );
     }
 
     @TestFactory

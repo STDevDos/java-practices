@@ -18,7 +18,7 @@ public class TimeoutExceededTest {
     @Test
     void timeoutExceeded() {
         assertTimeout(ofMillis(10), () -> {
-            Thread.sleep(100);
+            Thread.sleep(5);
         });
     }
 

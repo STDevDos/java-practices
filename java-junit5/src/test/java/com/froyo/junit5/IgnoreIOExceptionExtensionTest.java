@@ -5,9 +5,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.io.IOException;
 
+@ExtendWith(IgnoreIOExceptionExtension.class)
 class IgnoreIOExceptionExtensionTest {
 
-    @ExtendWith(IgnoreIOExceptionExtension.class)
     @Test
     public void firstTest() throws IOException {
         throw new IOException("IO Exception");
