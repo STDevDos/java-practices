@@ -1,7 +1,7 @@
 package com.froyo.model.dto;
 
 import com.froyo.customvalidation.constraints.AirlineConstraint;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 public class TripDTO {
 

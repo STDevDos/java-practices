@@ -3,8 +3,8 @@ package com.froyo.customvalidation;
 import com.froyo.customvalidation.constraints.AirlineConstraint;
 import org.apache.commons.lang3.StringUtils;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
 import static com.froyo.common.codevalues.AIRLINE.*;
