@@ -13,9 +13,9 @@ public class AppCustomValidation {
         TripDTO tripDTO2 = new TripDTO("inTerjet");
         TripDTO tripDTO3 = new TripDTO("taca");
 
-        logger.info(tripDTO1.toString());
-        logger.info(tripDTO2.toString());
-        logger.info(tripDTO3.toString());
+        System.out.println(tripDTO1);
+        System.out.println(tripDTO2);
+        System.out.println(tripDTO3);
 
     }
 
