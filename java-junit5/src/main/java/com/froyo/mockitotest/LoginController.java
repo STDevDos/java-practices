@@ -1,11 +1,12 @@
 package com.froyo.mockitotest;
 
-import lombok.extern.java.Log;
+import java.util.logging.Logger;
 
 import javax.security.auth.login.LoginException;
 
-@Log
+
 public class LoginController {
+    private static final Logger log = Logger.getLogger(LoginController.class.getName());
 
     public LoginService loginService = new LoginService();
 

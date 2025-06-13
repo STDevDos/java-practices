@@ -1,7 +1,7 @@
 package com.froyo;
 
 import com.froyo.model.dto.TripDTO;
-import lombok.extern.java.Log;
+import java.util.logging.Logger;
 
 public class AppCustomValidation {
 

@@ -1,6 +1,6 @@
 package euler;
 
-import lombok.extern.java.Log;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
@@ -8,8 +8,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("euler")
-@Log
+
 class ProjectEulerServiceImplTest {
+    private static final Logger log = Logger.getLogger(ProjectEulerServiceImplTest.class.getName());
 
     private ProjectEulerService service;
 

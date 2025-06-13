@@ -1,12 +1,8 @@
 package designpatterns.behavioral.command;
 
-import lombok.AllArgsConstructor;
-
 import java.math.BigDecimal;
 
-@AllArgsConstructor
 public class SaldoGastoServiceImpl implements SaldoFamiliarService {
-
     private SaldoFamiliar saldoFamiliar;
     private BigDecimal monto;
 
@@ -14,4 +10,9 @@ public class SaldoGastoServiceImpl implements SaldoFamiliarService {
         this.saldoFamiliar.gasto(this.monto);
     }
 
+    @java.lang.SuppressWarnings("all")
+    public SaldoGastoServiceImpl(final SaldoFamiliar saldoFamiliar, final BigDecimal monto) {
+        this.saldoFamiliar = saldoFamiliar;
+        this.monto = monto;
+    }
 }
