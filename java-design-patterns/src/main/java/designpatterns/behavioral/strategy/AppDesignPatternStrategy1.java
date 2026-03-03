@@ -1,22 +1,22 @@
 package designpatterns.behavioral.strategy;
 
-import org.apache.commons.lang3.ClassUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.reflect.MethodUtils;
-import org.apache.commons.text.WordUtils;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class AppDesignPatternStrategy1 {
     public static void main(String[] args) throws Exception {
         ContextVendedorNivel contextVendedorNivel = new ContextVendedorNivel(new VendedorNivel1());
         System.out.println(contextVendedorNivel.profitFromSale(50));
+
         String tipoDeVendedorFromDatabase = "VENDEDOR_NIVEL_1";
         String tipoDeVendedorParsed = parseTipoDeVendedorLikeNameClass(tipoDeVendedorFromDatabase);
-        final Class<?> clazz = ClassUtils.getClass("designpatterns.behavioral.strategy." + tipoDeVendedorParsed);
-//        Object profitFromSale = MethodUtils.invokeStaticMethod(clazz, "profitFromSale", 50);
+
+        final Class<?> clazz = Class.forName("designpatterns.behavioral.strategy." + tipoDeVendedorParsed);
         Object vendedorNivelTest = clazz.getDeclaredConstructor().newInstance();
-        Object profitFromSaleInvoke = MethodUtils.invokeMethod(vendedorNivelTest, "profitFromSale", 50);
+        Object profitFromSaleInvoke = clazz.getMethod("profitFromSale", int.class).invoke(vendedorNivelTest, 50);
+
         System.out.println(profitFromSaleInvoke);
-        //like ...this way
+
         ContextVendedorNivel contextVendedorNivelTest2 = new ContextVendedorNivel((StrategyVendedor) vendedorNivelTest);
         System.out.println(contextVendedorNivelTest2.profitFromSale(50));
     }
@@ -25,8 +25,9 @@ public class AppDesignPatternStrategy1 {
         if (tipoVendedor == null) {
             throw new java.lang.NullPointerException("tipoVendedor is marked non-null but is null");
         }
-        return StringUtils.replaceEach( //
-        WordUtils.capitalizeFully(tipoVendedor, new char[] {'_'}),  //
-        new String[] {"_"}, new String[] {StringUtils.EMPTY});
+        // VENDEDOR_NIVEL_1 -> VendedorNivel1
+        return Arrays.stream(tipoVendedor.toLowerCase().split("_"))
+                .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1))
+                .collect(Collectors.joining());
     }
 }

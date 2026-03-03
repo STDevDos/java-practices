@@ -45,17 +45,6 @@
 
     <dependencies>
 
-        <!-- Utility dependencies -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${apache.commons-lang3.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-text</artifactId>
-            <version>${apache.commons-text.version}</version>
-        </dependency>
 
         <!-- JUnit5 -->
         <dependency>
@@ -92,8 +81,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <source>25</source>
+                    <target>25</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <argLine>-Dnet.bytebuddy.experimental=true</argLine>
                 </configuration>
             </plugin>
         </plugins>
@@ -102,17 +99,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>21</java.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>25</java.version>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
 
-        <junit-plataform.version>5.6.1</junit-plataform.version>
-        <mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
-        <hamcrest.version>2.2</hamcrest.version>
+        <junit-plataform.version>5.11.4</junit-plataform.version>
+        <mockito-junit-jupiter.version>5.15.2</mockito-junit-jupiter.version>
+        <hamcrest.version>3.0</hamcrest.version>
 
-        <apache.commons-lang3.version>3.10</apache.commons-lang3.version>
-        <apache.commons-text.version>1.8</apache.commons-text.version>
-        <validation-api.version>2.0.0.Final</validation-api.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
 
     </properties>
 

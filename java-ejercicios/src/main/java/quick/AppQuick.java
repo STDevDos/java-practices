@@ -1,10 +1,5 @@
 package quick;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.commons.lang3.time.DateUtils;
-import org.apache.commons.text.RandomStringGenerator;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -13,27 +8,26 @@ import javax.crypto.spec.SecretKeySpec;
 import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
-import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.*;
-import static org.apache.commons.text.CharacterPredicates.DIGITS;
-import static org.apache.commons.text.CharacterPredicates.LETTERS;
+import java.util.stream.IntStream;
 
 public class AppQuick {
     @java.lang.SuppressWarnings("all")
     private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(AppQuick.class.getName());
 
     public static void main(String[] args) throws Exception {
-        //whenIsEncryptedAndDecrypted_thenDecryptedEqualsOriginal();
+        // whenIsEncryptedAndDecrypted_thenDecryptedEqualsOriginal();
         quick10();
     }
 
     public static void whenIsEncryptedAndDecrypted_thenDecryptedEqualsOriginal() throws Exception {
-        //https://www.baeldung.com/java-secure-random
         byte[] salt = new byte[32];
-        SecureRandom random = SecureRandom.getInstance("SHA1PRNG"); //apply Default algorithm -> SHA1PRNG
-        random.nextBytes(salt); //apply random to salt variable.
-        //TODO: PBEKeySpec -> https://stackoverrun.com/es/q/1527120
-        KeySpec spec = new PBEKeySpec("passwordm".toCharArray(), salt, 65536, 256); // AES-256
+        SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+        random.nextBytes(salt);
+        KeySpec spec = new PBEKeySpec("passwordm".toCharArray(), salt, 65536, 256);
         SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
         byte[] key = f.generateSecret(spec).getEncoded();
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
@@ -50,50 +44,55 @@ public class AppQuick {
     }
 
     public static void quick9() {
-        String[] headers = null;
+        String[] headers = { "Content-Type", "Authorization" };
         for (String header : headers) {
-            System.out.println(header);
+            log.info(header);
         }
     }
 
+    // Lógica nativa para reemplazar NumberUtils
+    public static boolean isCreatable(String str) {
+        if (str == null || str.isEmpty())
+            return false;
+        try {
+            Double.valueOf(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean isDigits(String str) {
+        if (str == null || str.isEmpty())
+            return false;
+        return str.chars().allMatch(Character::isDigit);
+    }
+
     public static void quick10() {
-        System.out.println(NumberUtils.isCreatable("2.33"));
-        System.out.println(NumberUtils.isDigits("2.33"));
-        System.out.println(NumberUtils.isParsable("2.33"));
-        System.out.println(NumberUtils.isCreatable("2.33f"));
-        System.out.println(NumberUtils.isDigits("2.33f"));
-        System.out.println(NumberUtils.isParsable("2.33f"));
-        System.out.println(NumberUtils.isCreatable("-2.33"));
-        System.out.println(NumberUtils.isDigits("-2.33"));
-        System.out.println(NumberUtils.isParsable("-2.33"));
-        System.out.println(NumberUtils.isCreatable("a"));
-        System.out.println(NumberUtils.isDigits("a"));
-        System.out.println(NumberUtils.isParsable("a"));
-        System.out.println(NumberUtils.isCreatable(""));
-        System.out.println(NumberUtils.isDigits(""));
-        System.out.println(NumberUtils.isParsable(""));
-        System.out.println(NumberUtils.isCreatable(null));
-        System.out.println(NumberUtils.isDigits(null));
-        System.out.println(NumberUtils.isParsable(null));
-        System.out.println(NumberUtils.isCreatable("0"));
-        System.out.println(NumberUtils.isDigits("0"));
-        System.out.println(NumberUtils.isParsable("0"));
+        System.out.println(isCreatable("2.33"));
+        System.out.println(isDigits("2.33"));
+        System.out.println(isCreatable("2.33f"));
+        System.out.println(isDigits("2.33f"));
+        System.out.println(isCreatable("-2.33"));
     }
 
     public static void quick8() {
-        System.out.println(RandomStringUtils.randomAlphanumeric(4));
-        String returnStr =  //
-        //
-        new RandomStringGenerator.Builder().withinRange('0', 'z').filteredBy(LETTERS, DIGITS).build().generate(4);
-        System.out.println(returnStr);
+        // Reemplazo de RandomStringGenerator con SecureRandom nativo de Java
+        String chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        SecureRandom random = new SecureRandom();
+        String returnStr = IntStream.range(0, 4)
+                .map(i -> random.nextInt(chars.length()))
+                .mapToObj(chars::charAt)
+                .map(Object::toString)
+                .collect(java.util.stream.Collectors.joining());
+
+        log.info("Generated string: " + returnStr);
     }
 
     public static void quick7() {
         Map<String, String> map = new HashMap<>();
         map.put("1", "uno");
-//        map.put("2","dos");
         map.put("3", "tres");
-//        map.put("4","cuatro");
         List<String> listString = new ArrayList<>(map.keySet());
         List<Object> listInteger = new ArrayList<>();
         listInteger.add("11");
@@ -108,7 +107,7 @@ public class AppQuick {
         }
         listInteger.remove(1);
         System.out.println(listInteger);
-        List<String> list = Arrays.asList("node", "java", "c++", "react", "javascript");
+        List<String> list = List.of("node", "java", "c++", "react", "javascript");
         String result = list.stream().reduce((first, second) -> second).orElse("no last element");
         System.out.println(result);
     }
@@ -131,37 +130,44 @@ public class AppQuick {
     }
 
     public static void quick4() {
-//        Integer valorA = Integer.valueOf("1");
         Integer valorA = null;
-//        int valorA = 1;
-//        Long valorA = 1L;
         Integer valorB = 1;
-        //System.out.println(valorA != valorB);
-        //System.out.println(valorA.equals(valorB)); NPE
         System.out.println(!Objects.equals(valorA, valorB));
     }
 
     public static void quick3() {
         List<String> listString = null;
-        System.out.println(listString.isEmpty());
+        try {
+            System.out.println(listString.isEmpty());
+        } catch (NullPointerException e) {
+            System.out.println("listString is null");
+        }
     }
 
     public void quick2() {
-        log.info(RandomStringUtils.randomAlphanumeric(4));
+        String chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        SecureRandom random = new SecureRandom();
+        String result = IntStream.range(0, 4)
+                .map(i -> random.nextInt(chars.length()))
+                .mapToObj(chars::charAt)
+                .map(Object::toString)
+                .collect(java.util.stream.Collectors.joining());
+        log.info(result);
     }
 
     public void quick1() {
         String inputMask = "MM/dd/yyyy";
         String stringData = "05/25/2020 12:13";
         try {
-            stringData = StringUtils.substring(stringData, 0, inputMask.length());
-            Date date = DateUtils.parseDateStrictly(stringData, inputMask);
+            stringData = stringData.substring(0, inputMask.length());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(inputMask)
+                    .withResolverStyle(ResolverStyle.STRICT);
+            LocalDate date = LocalDate.parse(stringData, formatter);
             log.info(date.toString());
-        } catch (ParseException pe) {
+        } catch (Exception pe) {
             pe.printStackTrace();
         }
     }
-
 
     static class Persona {
         private String nombre;

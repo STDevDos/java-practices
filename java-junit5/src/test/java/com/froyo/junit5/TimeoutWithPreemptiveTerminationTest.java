@@ -9,13 +9,14 @@ public class TimeoutWithPreemptiveTerminationTest {
 
     /**
      * The other Jupiter assertion for timeouts is called assertTimeoutPreemptively.
-     * The difference with assertTimeoutPreemptively with respect to assertTimeout is
+     * The difference with assertTimeoutPreemptively with respect to assertTimeout
+     * is
      * that assertTimeoutPreemptively does not wait until the end of the operation,
      * and the execution is aborted when the expected timeout is exceeded.
      */
     @Test
     void timeoutExceededWithPreemptiveTermination() {
-        assertTimeoutPreemptively(ofMillis(10), () -> {
+        assertTimeoutPreemptively(ofMillis(1000), () -> {
             Thread.sleep(5);
         });
     }

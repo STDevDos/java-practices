@@ -2,16 +2,12 @@ package designpatterns.creational.abstractfactory;
 
 public final class FactoryDBConnection {
     public static DBConfig getInstance(ConnectionType connectionType) {
-        switch (connectionType) {
-        case MYSQL: 
-            return new DBConnectionMySQL();
-        case POSTGRESQL: 
-            return new DBConnectionPostgreSQL();
-        case REST: 
-            return new DBRest();
-        default: 
-            return null;
-        }
+        return switch (connectionType) {
+            case MYSQL -> new DBConnectionMySQL();
+            case POSTGRESQL -> new DBConnectionPostgreSQL();
+            case REST -> new DBRest();
+            default -> throw new IllegalArgumentException("Unknown connection type: " + connectionType);
+        };
     }
 
     @java.lang.SuppressWarnings("all")

@@ -35,8 +35,9 @@ class LoginControllerTest {
 
         // Verification
         assertEquals("OK", responseLogin);
-        verify(loginService).login(userForm); //verificando que se haya mandado llamar el método de login
-        verifyNoMoreInteractions(loginService); //verificando que no exista ninguna interacción con loginService de aquí en adelante.
+        verify(loginService).login(userForm); // verificando que se haya mandado llamar el método de login
+        verifyNoMoreInteractions(loginService); // verificando que no exista ninguna interacción con loginService de
+                                                // aquí en adelante.
 
     }
 
@@ -51,8 +52,7 @@ class LoginControllerTest {
         // Verification
         assertEquals("KO", responseLogin);
         verify(loginService).login(userForm);
-        verifyZeroInteractions(loginService);
+        verifyNoMoreInteractions(loginService);
     }
-
 
 }
